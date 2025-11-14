@@ -1,4 +1,4 @@
-#  Lesson 1 — Motor Control (4WD Arduino Robot)
+#  Lesson 3 — Motor Control (4WD Arduino Robot)
 
 ##  Objectives
 
