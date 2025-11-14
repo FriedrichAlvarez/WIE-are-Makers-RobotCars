@@ -1,4 +1,4 @@
-#  Lesson 3 — Ultrasonic Sensor (Keyestudio 4WD BT Car)
+#  Lesson 2 — Ultrasonic Sensor (Keyestudio 4WD BT Car)
 
 ##  Objectives
 
