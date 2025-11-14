@@ -25,7 +25,8 @@ Using this **time-of-flight**, you can calculate how far away the object is!
 
 <img width="500" height="268" alt="image" src="https://github.com/user-attachments/assets/e8c86b76-aa77-4b8f-9b4b-add5b7c4ceb9" />
 
-You can think of it just like a bat's echolocation. An ultrasonic sensor is like a bat that shouts and listens for the echo to figure out how far away things are.
+
+You can think of it just like a **bat's echolocation**. An ultrasonic sensor is like a bat that shouts and listens for the echo to figure out how far away things are.
 
 ###  Time and Distance Formulas
 
@@ -49,21 +50,6 @@ inches = (duration / 2.0) / 74.0;
 | ECHO        | 5          |
 
  **Tip:** The Echo pin must be on a digital pin that supports `pulseIn()`.
-
-
----
-
-##  Arduino Program Structure
-
-```cpp
-void setup() {
-  // Runs once
-}
-
-void loop() {
-  // Repeats forever
-}
-```
 
 ---
 
@@ -108,7 +94,10 @@ To take a measurement, click on the Ultrasonic Sensor and then move the circle a
 
 ##  Learn: What Is an `if` Statement?
 
-An `if` statement lets your robot make decisions.
+An `if` statement lets your robot/code make decisions.
+
+<img width="1216" height="422" alt="image" src="https://github.com/user-attachments/assets/e57ab759-44f2-4477-b6bd-7bc8d26ccec4" />
+
 
 ```cpp
 if (cm < 10) {
@@ -116,7 +105,7 @@ if (cm < 10) {
 }
 ```
 
-* If the condition is **true**, the code inside the `{}` runs.
+* If the condition is **true**, the code inside the block runs.
 * You can adjust the number to change the trigger distance.
 
 ---
@@ -124,17 +113,9 @@ if (cm < 10) {
 ## 🌟 Student Challenges
 
 *  Display a message like "Object Detected!" when something is close
-*  Modify the math to convert distance differently
-*  Measure how far away you can detect your hand
-*  Try adding an `if` statement to warn if object is < 10cm
+*  Display a message like "All clear!" when nothing is close
+*  Change your circuit to have an LED serve as a warning light that turns on when the distance is too close
 
-```cpp
-if (cm < 10) {
-  Serial.println("⚠️ Object Detected!");
-}
-```
-
-📄 Once you're confident, move on to Lesson 4 (IR Remote Control)!
 
 ---
 
