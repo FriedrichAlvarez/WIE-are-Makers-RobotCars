@@ -160,4 +160,3 @@ Try modifying the code to explore different behaviors:
 
 ---
 
-👉 [Next: Lesson 3 - Ultrasonic Sensor](https://github.com/ArtMil86/ECE-IEEE-Summer-Workshop/blob/main/Lesson%203%20Ultrasonic%20Sensor.md))
