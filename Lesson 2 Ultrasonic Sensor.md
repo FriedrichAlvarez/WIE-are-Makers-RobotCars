@@ -119,7 +119,7 @@ if (cm < 10) {
 
 ---
 
-##  Quick Reference Table
+##  Quick Reference Table for Arduino Text code
 
 | Concept       | Function              | Description                                   |
 | ------------- | --------------------- | --------------------------------------------- |
@@ -131,6 +131,3 @@ if (cm < 10) {
 | Conditional   | `if`                  | Executes code if condition is true            |
 
 ---
-
-👉 [Next: Lesson 4 - LED Matrix](https://github.com/ArtMil86/ECE-IEEE-Summer-Workshop/blob/main/Lesson%204%20-%208x16%20LED%20Matrix.md)
-
