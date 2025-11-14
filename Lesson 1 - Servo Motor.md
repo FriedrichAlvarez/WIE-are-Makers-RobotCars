@@ -40,6 +40,13 @@ In TinkerCAD, ensure that the circuit design template is connected like this:
 | Power        | **5V**     |
 | Signal       | **4**      |
 
+## Basic Rotation
+
+We can do some basic rotating using this block:
+
+<img width="565" height="141" alt="image" src="https://github.com/user-attachments/assets/8ecf10e5-5c25-4e6f-adc1-8fb1b54ef1a3" />
+
+The block code is provided in the design. Make sure that the pin is **4**.
 
 ##  Part 2: What Is `delay()`?
 
@@ -51,6 +58,7 @@ The `delay()` function in Arduino/TinkerCAD pauses the program for a number of *
 delay(15);
 ```
 The block version of this command is known as the **wait** block in the Control tab.
+
 <img width="379" height="109" alt="image" src="https://github.com/user-attachments/assets/17009fb8-1e0a-4957-8614-66e48a0447ef" />
 
 * `delay(1000)` → 1 second
@@ -71,56 +79,22 @@ If the delay is **too short**, the servo may jitter or get damaged trying to cat
 
 ##  What Is a `for` Loop?
 
-A `for` loop lets us **repeat code** a specific number of times. Useful for slowly moving a servo through angles.
+A `for` loop lets us **repeat code** a specific number of times. It is useful for slowly moving a servo through angles.
 
 Here's what the code looks like in TinkerCAD:
 
 <img width="627" height="469" alt="image" src="https://github.com/user-attachments/assets/0e09fb1e-584a-452d-bf70-f9668f95ee28" />
 
->  `angle++` means "increase angle by 1 each time"
-
-
 
 ---
 
-##  Arduino Sweep Code (Using Servo Library)
-
- This code uses the built-in `Servo.h` library.
-
-```cpp
-#include <Servo.h>
-
-Servo myServo;  // Create Servo object
-
-void setup() {
-  myServo.attach(A3);  // Connect signal wire to pin A3
-}
-
-void loop() {
-  // Sweep from 0° to 180°
-  for (int angle = 0; angle <= 180; angle++) {
-    myServo.write(angle);
-    delay(15);  // 15 ms wait — safe and smooth
-  }
-
-  // Sweep back from 180° to 0°
-  for (int angle = 180; angle >= 0; angle--) {
-    myServo.write(angle);
-    delay(15);
-  }
-}
-```
-
- Upload this code and observe your servo sweep smoothly!
-
----
 
 ##  Student Challenges
 
 Try modifying the code to explore different behaviors:
 
-*  Make it sweep slowly using `delay(30)`
-*  Make it sweep faster using `delay(10)`
+*  Make it rotate slowly using `delay(30)`
+*  Make it rotate faster using `delay(10)`
 *  Try sweeping from 45° to 135° only
 *  Bonus: Try jumping to random angles with `random(0, 180)`
 
@@ -128,7 +102,7 @@ Try modifying the code to explore different behaviors:
 
 ---
 
-##  Quick Reference Table
+##  Quick Reference Table for Arduino Text code
 
 | Concept         | Function            | Description                           |
 | --------------- | ------------------- | ------------------------------------- |
