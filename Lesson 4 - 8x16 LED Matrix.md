@@ -317,8 +317,5 @@ void loop() {
  Well done! You now have full creative power over the LED Matrix.
 Next, we'll combine this display with robot **movement** and **sensors**.
 
-👉 [Next: Lesson 5 — Obstacle Avoidance Integration](https://github.com/ArtMil86/ECE-IEEE-Summer-Workshop/blob/main/Lesson%205%20-%20Smart%20Obstacle%20-%20Avoiding%20Robot.md)
-
----
 
 
