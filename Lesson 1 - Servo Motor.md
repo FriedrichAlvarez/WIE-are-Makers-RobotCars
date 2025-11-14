@@ -10,7 +10,7 @@
 
 ---
 
-##  What Is a Servo Motor?
+##  Part 1: What Is a Servo Motor?
 <img width="713" height="310" alt="image" src="https://github.com/user-attachments/assets/acecd15d-0b2a-4dbf-b168-d0948b2bdaaf" />
 
 A **servo motor** is a special kind of motor that rotates to a **specific angle**, usually between **0° and 180°**. It is often used for precise control of motion in robotics, such as steering, gripping, or sensor positioning.
@@ -34,22 +34,24 @@ A typical servo contains:
 
 In TinkerCAD, ensure that the circuit design template is connected like this:
 
-| Servo Wire   | Connect To |
+| Servo Port   | Connect To |
 | ------------ | ---------- |
-| Orange/White | **4**      |
-| Red (VCC)    | **5V**     |
-| Brown/Black  | **GND**    |
+| Ground       | **GND**    |
+| Power        | **5V**     |
+| Signal       | **4**      |
 
 
+##  Part 2: What Is `delay()`?
 
-##  What Is `delay()`?
 
-The `delay()` function in Arduino pauses the program for a number of **milliseconds (ms)**.
+The `delay()` function in Arduino/TinkerCAD pauses the program for a number of **milliseconds (ms)**.
 
 ```cpp
 // Pause for 15 milliseconds
 delay(15);
 ```
+The block version of this command is known as the **wait** block in the Control tab.
+<img width="379" height="109" alt="image" src="https://github.com/user-attachments/assets/17009fb8-1e0a-4957-8614-66e48a0447ef" />
 
 * `delay(1000)` → 1 second
 * `delay(15)` → 15 **milliseconds**, or 0.015 seconds
@@ -71,23 +73,13 @@ If the delay is **too short**, the servo may jitter or get damaged trying to cat
 
 A `for` loop lets us **repeat code** a specific number of times. Useful for slowly moving a servo through angles.
 
-```cpp
-for (int angle = 0; angle <= 180; angle++) {
-  myServo.write(angle);  // Move to next angle
-  delay(15);             // Wait so servo can catch up
-}
-```
+Here's what the code looks like in TinkerCAD:
+
+<img width="627" height="469" alt="image" src="https://github.com/user-attachments/assets/0e09fb1e-584a-452d-bf70-f9668f95ee28" />
 
 >  `angle++` means "increase angle by 1 each time"
 
-You can reverse the direction:
 
-```cpp
-for (int angle = 180; angle >= 0; angle--) {
-  myServo.write(angle);
-  delay(15);
-}
-```
 
 ---
 
