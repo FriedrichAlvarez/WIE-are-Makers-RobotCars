@@ -3,7 +3,7 @@
 ##  Objectives
 
 * Understand what a servo motor is and how it works.
-* Learn how to control a servo using the `Servo` library in Arduino.
+* Learn how to control a servo using the `Servo` library in TinkerCAD.
 * Use a `for` loop to create a sweeping motion from 0° to 180°.
 * Learn how `delay()` affects motion speed and servo behavior.
 * Practice timing and smooth control without damaging the motor.
@@ -15,6 +15,8 @@
 
 A **servo motor** is a special kind of motor that rotates to a **specific angle**, usually between **0° and 180°**. It is often used for precise control of motion in robotics, such as steering, gripping, or sensor positioning.
 
+Another way to think about it: A regular DC motor is like a **fan** because it has continuous spinning. On the other hand, a servo motor is like a **steering wheel** because it has precise control over the degree of rotation.
+
 ###  Inside a Servo
 
 A typical servo contains:
@@ -24,35 +26,21 @@ A typical servo contains:
 * A **position sensor** (potentiometer)
 * Control circuitry
 
-The servo receives **PWM signals** from the Arduino. The signal width determines the target angle:
-
-<img width="535" height="244" alt="image" src="https://github.com/user-attachments/assets/c1fe0d9e-cc57-43a0-ada4-5f06151fb35f" />
-
-* Short pulse (e.g. 1 ms) → 0°
-* Medium pulse (1.5 ms) → 90°
-* Long pulse (2 ms) → 180°
-
-> ℹ Most servos operate within a PWM signal that repeats every 20 ms (50 Hz).
-
 ---
 
 ##  Pin Wiring Table
 
 <img width="269" height="251" alt="image" src="https://github.com/user-attachments/assets/c27bf2eb-c8e7-4e62-a981-c70dd455c5f5" />
 
+In TinkerCAD, ensure that the circuit design template is connected like this:
+
 | Servo Wire   | Connect To |
 | ------------ | ---------- |
-| Orange/White | **D9**     |
+| Orange/White | **4**      |
 | Red (VCC)    | **5V**     |
 | Brown/Black  | **GND**    |
 
-⚠️ **Important:** Servos require more current than typical sensors. Always:
 
-* Use the 5V pin for power.
-* Make sure **GND is shared** between servo and Arduino.
-* Use **external power** if running multiple servos.
-
----
 
 ##  What Is `delay()`?
 
