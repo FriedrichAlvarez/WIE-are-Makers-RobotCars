@@ -3,10 +3,9 @@
 ##  Objectives
 
 * Understand what a servo motor is and how it works.
-* Learn how to control a servo using the `Servo` library in TinkerCAD.
+* Learn how to control a servo in TinkerCAD.
 * Use a `for` loop to create a sweeping motion from 0° to 180°.
 * Learn how `delay()` affects motion speed and servo behavior.
-* Practice timing and smooth control without damaging the motor.
 
 ---
 
