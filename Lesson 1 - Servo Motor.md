@@ -85,9 +85,13 @@ Here's what the code looks like in TinkerCAD:
 
 <img width="627" height="469" alt="image" src="https://github.com/user-attachments/assets/0e09fb1e-584a-452d-bf70-f9668f95ee28" />
 
+### What is this code doing?
 
----
+In this code, we created a Variable called angle and set it 180. This represents the number of degrees we want the **Repeat** block to rotate.
 
+So, this code is saying "Repeat this piece of code for 180 times"
+
+Then, we rotate the servo to that angle, and include our delay to help the motor catch up.
 
 ##  Student Challenges
 
@@ -95,7 +99,6 @@ Try modifying the code to explore different behaviors:
 
 *  Make it rotate slowly using `delay(30)`
 *  Make it rotate faster using `delay(10)`
-*  Try sweeping from 45° to 135° only
 *  Bonus: Try jumping to random angles with `random(0, 180)`
 
  Don't stress about perfection — explore and observe!
