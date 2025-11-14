@@ -4,7 +4,6 @@
 
 * Understand how an **ultrasonic sensor** measures distance using sound waves.
 * Control the **Trigger** and read the **Echo** pin to calculate time-of-flight.
-* Use `pulseIn()` and math to convert duration into **cm** and **inches**.
 * Display sensor output on the **Serial Monitor**.
 * Practice using **`if` statements** to detect nearby obstacles.
 
@@ -26,9 +25,7 @@ Using this **time-of-flight**, you can calculate how far away the object is!
 
 <img width="500" height="268" alt="image" src="https://github.com/user-attachments/assets/e8c86b76-aa77-4b8f-9b4b-add5b7c4ceb9" />
 
-* You trigger the sensor with a 10µs pulse on the **Trig** pin
-* The sensor responds by sending a pulse on the **Echo** pin
-* The width of the echo pulse tells you how far the object is
+You can think of it just like a bat's echolocation. An ultrasonic sensor is like a bat that shouts and listens for the echo to figure out how far away things are.
 
 ###  Time and Distance Formulas
 
@@ -46,20 +43,13 @@ inches = (duration / 2.0) / 74.0;
 
 | HC-SR04 Pin | Connect To |
 | ----------- | ---------- |
-| VCC         | 5V         |
-| GND         | GND        |
-| TRIG        | D12        |
-| ECHO        | D13        |
+| VCC/Power   | 5V         |
+| GND/Ground  | GND        |
+| TRIG        | 4          |
+| ECHO        | 5          |
 
  **Tip:** The Echo pin must be on a digital pin that supports `pulseIn()`.
 
-📷 Suggested images to add:
-
-```markdown
-![Ultrasonic Wiring](/images/ultrasonic_wiring.png)
-![Sensor Diagram](/images/hcsr04_diagram.png)
-![Pulse Timing](/images/hcsr04_timing.png)
-```
 
 ---
 
@@ -79,113 +69,40 @@ void loop() {
 
 ##  Step 1: Setup Sensor Pins
 
-```cpp
-int trigPin = 12;
-int echoPin = 13;
+In TinkerCAD, we are going to use this block from the **Input** tab.
 
-void setup() {
-  Serial.begin(9600);         // Start serial monitor
-  pinMode(trigPin, OUTPUT);   // Trig sends signal
-  pinMode(echoPin, INPUT);    // Echo receives signal
-}
-```
+<img width="963" height="157" alt="image" src="https://github.com/user-attachments/assets/e4b21970-4566-4dd0-9223-452711850eda" />
 
-📄 Upload this code to confirm the pins are set up correctly.
+This block will get us a distance reading in centimeters. We can then set this to a variable.
+
+Create a variable called "distance".
+
+<img width="1192" height="114" alt="image" src="https://github.com/user-attachments/assets/1221c34c-d46b-4ab3-ae61-5232b0494cb3" />
+
+Now, we can print this variable "distance" to the **Serial Monitor** to see the measurements print out.
+
+<img width="1254" height="329" alt="image" src="https://github.com/user-attachments/assets/37091f79-5b0d-4d04-9ece-380c6ab22425" />
+
+
 
 ---
 
 ##  Step 2: Trigger the Sensor
 
-To take a measurement:
+To take a measurement, click on the Ultrasonic Sensor and then move the circle around.
 
-```cpp
-// Trigger pulse sequence
+<img width="795" height="744" alt="image" src="https://github.com/user-attachments/assets/8c2ffadb-7257-4a94-a02f-750b34c4a068" />
 
-digitalWrite(trigPin, LOW);
-delayMicroseconds(2);
-digitalWrite(trigPin, HIGH);
-delayMicroseconds(10);
-digitalWrite(trigPin, LOW);
-```
 
  Why so fast? The **10-microsecond pulse** is the signal to start the sonar ping.
 
 ---
 
-##  Step 3: Measure and Calculate Distance
-
-```cpp
-long duration = pulseIn(echoPin, HIGH);
-float cm = (duration / 2.0) / 29.1;
-float inches = (duration / 2.0) / 74.0;
-```
-
-Now print to the Serial Monitor:
-
-```cpp
-Serial.print("Distance: ");
-Serial.print(cm);
-Serial.print(" cm\t");
-Serial.print(inches);
-Serial.println(" inches");
-```
-
-📄 Upload and open Serial Monitor to see results.
-
----
-
 ## 🖥 How to Use Serial Monitor
 
-* Click the **magnifying glass icon** in the top-right of the Arduino IDE.
-* Make sure the baud rate is **9600**.
-* Move your hand in front of the sensor and watch the distance change.
-
- Suggested image:
-
-```markdown
-![Serial Monitor Guide](/images/serial_monitor.png)
-```
-
----
-
-##  Full Example Code
-
-```cpp
-int trigPin = 12;
-int echoPin = 13;
-
-long duration;
-float cm, inches;
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-}
-
-void loop() {
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  duration = pulseIn(echoPin, HIGH);
-
-  cm = (duration / 2.0) / 29.1;
-  inches = (duration / 2.0) / 74.0;
-
-  Serial.print("Distance: ");
-  Serial.print(cm);
-  Serial.print(" cm\t");
-  Serial.print(inches);
-  Serial.println(" inches");
-
-  delay(500);
-}
-```
-
-📄 Upload and open Serial Monitor to view live sensor data.
+* Click the **Code** button in the top-right of the TinkerCAD interface.
+* Below the block menu, find the **Serial Monitor** tab.
+* When you run your simulation, you see the numbers being actively printed out.
 
 ---
 
