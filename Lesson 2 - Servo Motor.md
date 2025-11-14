@@ -1,4 +1,4 @@
-#  Lesson 2 — Servo Motor (Keyestudio 4WD BT Car)
+#  Lesson 1 — Servo Motor (Keyestudio 4WD BT Car)
 
 ##  Objectives
 
