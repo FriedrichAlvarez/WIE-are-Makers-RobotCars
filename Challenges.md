@@ -12,6 +12,7 @@
 ### Arduino Sweep Code (Using Servo Library)
 This code uses the built-in Servo.h library:
 
+```cpp
 #include <Servo.h>
 
 Servo myServo;  // Create Servo object
@@ -33,9 +34,11 @@ void loop() {
     delay(15);
   }
 }
+```
 
 ### Arduino Ultrasonic Code
 
+```cpp
 int trigPin = 12;
 int echoPin = 13;
 
@@ -68,6 +71,7 @@ void loop() {
 
   delay(500);
 }
+```
 
 ---
 
