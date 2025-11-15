@@ -7,8 +7,67 @@
 > - **Lesson 3 – Motors (Forward/Backward/Turns)**
 > - **Lesson 4 – 8×16 LED Matrix**
 >
-> Do **not** invent new pins or names—reuse your lesson templates so your code stays consistent.
+> Do **not** invent new pins or names—reuse your lesson templates so your code stays consistent. Here is all the **Arduino Text code** that you will need to incorporate the **Servo Motors** and **Ultrasonic Sensor** from Lessons 1 and 2.
 
+### Arduino Sweep Code (Using Servo Library)
+This code uses the built-in Servo.h library:
+
+#include <Servo.h>
+
+Servo myServo;  // Create Servo object
+
+void setup() {
+  myServo.attach(A3);  // Connect signal wire to pin A3
+}
+
+void loop() {
+  // Sweep from 0° to 180°
+  for (int angle = 0; angle <= 180; angle++) {
+    myServo.write(angle);
+    delay(15);  // 15 ms wait — safe and smooth
+  }
+
+  // Sweep back from 180° to 0°
+  for (int angle = 180; angle >= 0; angle--) {
+    myServo.write(angle);
+    delay(15);
+  }
+}
+
+### Arduino Ultrasonic Code
+
+int trigPin = 12;
+int echoPin = 13;
+
+long duration;
+float cm, inches;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+
+  cm = (duration / 2.0) / 29.1;
+  inches = (duration / 2.0) / 74.0;
+
+  Serial.print("Distance: ");
+  Serial.print(cm);
+  Serial.print(" cm\t");
+  Serial.print(inches);
+  Serial.println(" inches");
+
+  delay(500);
+}
 
 ---
 
