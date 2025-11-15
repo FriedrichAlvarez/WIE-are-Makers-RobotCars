@@ -19,7 +19,7 @@
 ### Required behaviors
 - Drive forward until an object is detected **closer than `10cm`**.
 - When too close:
-  - Show a **reaction image** on the **8×16 LED matrix** (for example and x) — from **Lesson 4**.
+  - Show a **reaction image** on the **8×16 LED matrix** (for example an X) — from **Lesson 4**.
   - **Back up** briefly.
   - **Turn** left **or** right (your choice: random, alternate, or based on last turn).
   - Resume **forward** drive.
