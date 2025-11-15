@@ -10,7 +10,13 @@
 > Do **not** invent new pins or names—reuse your lesson templates so your code stays consistent. Here is all the **Arduino Text code** that you will need to incorporate the **Servo Motors** and **Ultrasonic Sensor** from Lessons 1 and 2.
 
 
-MAKE SURE you do not change the pin assignments
+**MAKE SURE you do not change the pin assignments**
+
+Servo = A3
+Ultrasonic trigPin = D12
+Ultrasonic echoPin = D13
+
+
 ### Arduino Sweep Code (Using Servo Library)
 This code uses the built-in Servo.h library:
 
