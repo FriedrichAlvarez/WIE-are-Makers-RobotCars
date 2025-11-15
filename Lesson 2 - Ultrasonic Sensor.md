@@ -70,6 +70,22 @@ Now, we can print this variable "distance" to the **Serial Monitor** to see the 
 <img width="1254" height="329" alt="image" src="https://github.com/user-attachments/assets/37091f79-5b0d-4d04-9ece-380c6ab22425" />
 
 
+**Here is this code in text:**
+
+```cpp
+int trigPin = 12;
+int echoPin = 13;
+
+void setup() {
+  Serial.begin(9600);         // Start serial monitor
+  pinMode(trigPin, OUTPUT);   // Trig sends signal
+  pinMode(echoPin, INPUT);    // Echo receives signal
+}
+```
+
+📄 Upload this code to confirm the pins are set up correctly.
+
+
 
 ---
 
@@ -78,6 +94,20 @@ Now, we can print this variable "distance" to the **Serial Monitor** to see the 
 To take a measurement, click on the Ultrasonic Sensor and then move the circle around.
 
 <img width="795" height="744" alt="image" src="https://github.com/user-attachments/assets/8c2ffadb-7257-4a94-a02f-750b34c4a068" />
+
+**Here is the code in text**
+
+To take a measurement:
+
+```cpp
+// Trigger pulse sequence
+
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+```
 
 
  Why so fast? The **10-microsecond pulse** is the signal to start the sonar ping.
