@@ -146,7 +146,44 @@ if (cm < 10) {
 *  Display a message like "All clear!" when nothing is close
 *  Change your circuit to have an LED serve as a warning light that turns on when the distance is too close
 
+---
 
+##  Full Example Code
+
+```cpp
+int trigPin = 12;
+int echoPin = 13;
+
+long duration;
+float cm, inches;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+
+  cm = (duration / 2.0) / 29.1;
+  inches = (duration / 2.0) / 74.0;
+
+  Serial.print("Distance: ");
+  Serial.print(cm);
+  Serial.print(" cm\t");
+  Serial.print(inches);
+  Serial.println(" inches");
+
+  delay(500);
+}
+```
 ---
 
 ##  Quick Reference Table for Arduino Text code
