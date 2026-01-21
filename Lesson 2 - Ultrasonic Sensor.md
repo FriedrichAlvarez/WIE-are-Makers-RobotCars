@@ -181,7 +181,7 @@ void loop() {
   Serial.print(inches);
   Serial.println(" inches");
 
-  delay(500);
+  delay(1000);
 }
 ```
 ---
